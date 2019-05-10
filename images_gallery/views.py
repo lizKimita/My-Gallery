@@ -5,4 +5,5 @@ import datetime as dt
 # Create your views here.
 def all_images(request):
     title = "gallery"
-    return render(request, 'images.html')
+    
+    return render(request, 'all_images/gallery.html', {"title":title})
