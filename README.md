@@ -14,8 +14,7 @@ My Gallery is a website that gets to showcase beautiful images from different ca
 | To view all images       |   Navigate to the home page       | All the images will be displayed         |
 |                                                                                                         |
 | View image details       |   Click on the image              | image details will be displayed          |
-| Search for images in         Input the image category in       images in that category will be          |
-| the same category        |    the search bar                 | displayed                                |
+| Search for images in the same category| Input the image category in the search bar |Images in that category will be displayed |
 | Filter images based      |   navigate to the filter          | Displays images for that location        |
 | on location              |   button and select a location    |                                          |
 | Copy image Link          |   Click on copy link on the       | Copies the image link path               |
