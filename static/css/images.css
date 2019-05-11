@@ -23,3 +23,10 @@ h2 {
     font-family: 'Pacifico', cursive;
     font-size: 200%;
 }
+.btn-lg {
+    border-color: cadetblue;
+}
+.modal-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 200%;
+}
