@@ -39,12 +39,15 @@ class ImageTestClass(TestCase):
     def setUp(self):
         # Location class test
         self.kenya = Location(location = "kenya")
+        self.kenya.save_location()
 
         # Category class Test
         self.nature = Category(category = "nature")
-
+        self.nature.save_category()
         # Image class Test
         self.image = Image(image = "",name="nature goodness", description = "I love this view", pub_date = "10/2/2019", location = self.kenya, category = self.nature)
+        self.image.save_image()
+
 
     # Testing  instance
     def test_instance(self):
@@ -55,3 +58,22 @@ class ImageTestClass(TestCase):
         self.image.save_image()
         images = Image.objects.all()
         self.assertTrue(len(images)>0)
+
+    # Testing Delete method
+    def test_delete_method(self):
+        self.image.delete_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) == 0)
+
+
+    # Testing getting image by id 
+    def test_get_image_by_id(self):
+        images = Image.get_image_by_id(self.image.id)
+        self.assertTrue(images == self.image)
+
+    # Testing Update method
+    def test_update_method(self):
+        image = Image.get_image_by_id(self.image.id)
+        image.update_image("new_image")
+        image = Image.get_image_by_id(self.image.id)
+        self.assertTrue(image.image == "new_image")

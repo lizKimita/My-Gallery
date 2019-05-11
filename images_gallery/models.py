@@ -44,6 +44,18 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
+    def delete_image(self):
+        self.delete()
+
+    def update_image(self, update):
+        self.image = update
+        self.save()
+
+    @classmethod
+    def get_image_by_id(cls, id):
+        found_image = Image.objects.get(id=id)
+        return found_image
+
     class Meta:
         ordering = ['image']
 
