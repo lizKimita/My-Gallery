@@ -28,4 +28,4 @@ def filter_by_location(request,location):
     images_filtered = Image.filter_by_location(location)
     filter_message = f'{location} Images'
 
-    return render(request, 'location.html', {"message": filter_message, "images":images_filtered, "locations":location})
+    return render(request, 'location.html',{"message": filter_message, "images":images_filtered, "locations":location})

@@ -1,3 +1,25 @@
 h1 {
-    text-align: center
+    text-align: center;
+    font-size: 350%;
+    text-decoration: underline;
+    color:rgb(12, 124, 90);
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 300%;
+    text-decoration: underline;
+}
+/* #background {
+    background-image: url(https://image.freepik.com/free-vector/pastel-color-artistic-watercolor-background_1116-207.jpg)
+} */
+#jumbo {
+    background-color: rgba(12, 124, 90, 0.562)
+}
+#background {
+    background-color: gainsboro
+}
+.quote{
+    font-family: 'Pacifico', cursive;
+    font-size: 200%;
 }
