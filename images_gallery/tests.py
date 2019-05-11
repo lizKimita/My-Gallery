@@ -11,11 +11,24 @@ class LocationTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.kenya,Location))
 
-        # Testing Save method
+    # Testing Save method
     def test_save_method(self):
         self.kenya.save_location()
         locations = Location.objects.all()
         self.assertTrue(len(locations)>0)
+
+    # Testing Delete method
+    def test_delete_method(self):
+        self.kenya.delete_location()
+        location = Location.objects.all()
+        self.assertTrue(len(location) == 0)
+
+    # Testing Update method
+    def test_update_method(self):
+        location = Location.get_location_by_id(self.kenya.id)
+        location.update_location("rome")
+        location = Location.get_location_by_id(self.image.id)
+        self.assertTrue(location.location == "rome")
 
 
 class CategoryTestClass(TestCase):
@@ -27,11 +40,17 @@ class CategoryTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.nature,Category))
 
-        # Testing Save method
+    # Testing Save method
     def test_save_method(self):
         self.nature.save_category()
         categories = Category.objects.all()
         self.assertTrue(len(categories)>0)
+
+    # Testing Delete method
+    def test_delete_method(self):
+        self.nature.delete_category()
+        category = Category.objects.all()
+        self.assertTrue(len(category) == 0)
 
 class ImageTestClass(TestCase):
 
@@ -77,3 +96,13 @@ class ImageTestClass(TestCase):
         image.update_image("new_image")
         image = Image.get_image_by_id(self.image.id)
         self.assertTrue(image.image == "new_image")
+
+    # Testing search_image_by_category method
+    def test_search_image(self):
+        images = Image.search_by_category('Nature')
+        self.assertTrue(len(images)>0)
+    
+    # Testing filtering by location method
+    def test_filter_by_location(self):
+        images = Image.filter_by_location('Kenya')
+        self.assertTrue(len(images)>0)

@@ -10,16 +10,33 @@ class Location(models.Model):
 
     def save_location(self):
         self.save()
+    
+    def delete_location(self):
+        Location.objects.filter().delete()
+
+    # @classmethod
+    # def get_location_by_id(cls,id):
+    #     found_location = Location.objects.get(kenya=id)
+    #     return found_location
 
 
 class Category(models.Model):
     category = models.CharField(max_length = 30)
+
+
+    @classmethod
+    def get_categories(cls):
+        category = cls.objects.all()
+        return category
 
     def __str__(self):
         return self.category
 
     def save_category(self):
         self.save()
+    
+    def delete_category(self):
+        Category.objects.filter().delete()
 
 
 class Image(models.Model):
@@ -40,12 +57,17 @@ class Image(models.Model):
     def search_by_category(cls,search_term):
         images = cls.objects.filter(category__category__icontains = search_term)
         return images
+    
+    # @classmethod
+    # def filter_by_location(cls,location):
+    #     images = Image.objects.filter(location__id = location)
+    #     return images
 
     def save_image(self):
         self.save()
 
     def delete_image(self):
-        self.delete()
+        Image.objects.filter().delete()
 
     def update_image(self, update):
         self.image = update
