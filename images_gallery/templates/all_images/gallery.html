@@ -2,18 +2,26 @@
 
 {% block content %}
 {{block.super}}
-
 <div class="container">
-
+  <div class="row">
     <!-- Looping through images   -->
     {% for image_item in image %}
-  
-    <div class="row">
+    
     <!--Display news Article images  -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <img src="{{image_item.image.url}}" class="img-responsive" alt="Image">
-    </div>
-  
+    <div class="col-md-4" style="padding:.4%">
+      
+          <div class="card-group"style="width:30rem">
+            <div class="card" >
+                <div class="card-body">
+                  <img src="{{image_item.image.url}}" class="img-responsive" alt="Image">
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Share</small>
+                    <small class="text-muted">copy link</small>  
+                </div>  
+            </div>
+        </div>
+      
     </div>
   
     {% empty %}
@@ -21,7 +29,7 @@
       <h2 class="text-center">There is no Image yet!</h2>
     </div>
     {% endfor %}
-  
   </div>
+</div>
 
 {% endblock %}
