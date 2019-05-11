@@ -12,6 +12,7 @@ My Gallery is a website that gets to showcase beautiful images from different ca
 |    Users Requirements    |                Input              |               Output                     |
 | :---------------------:  |   :----------------------------:  |  :------------------------------------:  |
 | To view all images       |   Navigate to the home page       | All the images will be displayed         |
+|                          |                                   |                                          |
 | View image details       |   Click on the image              | image details will be displayed          |
 | Search for images in     |   Input the image category in     | images in that category will be          |
 | the same category        |    the search bar                 | displayed                                |
