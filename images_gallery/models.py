@@ -24,13 +24,11 @@ class Image(models.Model):
     location = models.ForeignKey(Location)
     category = models.ForeignKey(Category)
 
-    def __str__(self):
-        return self.image
 
     @classmethod
     def get_images(cls):
-        images = cls.objects.all()
-        return images
+        image = cls.objects.all()
+        return image
 
     class Meta:
         ordering = ['image']
