@@ -30,6 +30,11 @@ class Image(models.Model):
         image = cls.objects.all()
         return image
 
+    @classmethod
+    def search_by_category(cls,search_term):
+        images = cls.objects.filter(category__category__icontains = search_term)
+        return images
+
     class Meta:
         ordering = ['image']
 
