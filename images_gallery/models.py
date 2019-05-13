@@ -14,10 +14,10 @@ class Location(models.Model):
     def delete_location(self):
         Location.objects.filter().delete()
 
-    # @classmethod
-    # def get_location_by_id(cls,id):
-    #     found_location = Location.objects.get(kenya=id)
-    #     return found_location
+    @classmethod
+    def get_location(cls):
+        found_location = cls.objects.all()
+        return found_location
 
 
 class Category(models.Model):
@@ -60,7 +60,7 @@ class Image(models.Model):
     
     @classmethod
     def filter_by_location(cls,location):
-        images = Image.objects.filter(location__id = location)
+        images = Image.objects.filter(id = location)
         return images
 
     def save_image(self):
