@@ -23,13 +23,6 @@ class LocationTestClass(TestCase):
         location = Location.objects.all()
         self.assertTrue(len(location) == 0)
 
-    # Testing Update method
-    def test_update_method(self):
-        location = Location.get_location_by_id(self.kenya.id)
-        location.update_location("rome")
-        location = Location.get_location_by_id(self.kenya.id)
-        self.assertTrue(location.location == "rome")
-
 
 class CategoryTestClass(TestCase):
     # Set up method
@@ -52,13 +45,6 @@ class CategoryTestClass(TestCase):
         category = Category.objects.all()
         self.assertTrue(len(category) == 0)
 
-    
-    # Testing Update method
-    def test_update_method(self):
-        category = Location.get_category_by_id(self.nature.id)
-        category.update_category("art")
-        category = Category.get_category_by_id(self.nature.id)
-        self.assertTrue(category.category == "art")
 
 class ImageTestClass(TestCase):
 
@@ -110,7 +96,3 @@ class ImageTestClass(TestCase):
         images = Image.search_by_category('Nature')
         self.assertTrue(len(images)>0)
     
-    # Testing filtering by location method
-    def test_filter_by_location(self):
-        images = Image.filter_by_location('Kenya')
-        self.assertTrue(len(images)>0)
